@@ -25,6 +25,13 @@ class CalculatorEngineTest {
     }
 
     @Test
+    fun handlesUnicodeSubtractOperator() {
+        assertEquals("0", engine.evaluate("8−8"))
+        assertEquals("4", engine.evaluate("12−8"))
+        assertEquals("-4", engine.evaluate("8−12"))
+    }
+
+    @Test
     fun rejectsDivisionByZero() {
         assertThrows(IllegalArgumentException::class.java) {
             engine.evaluate("10/0")

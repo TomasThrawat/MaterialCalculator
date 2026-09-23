@@ -11,6 +11,7 @@ class CalculatorEngine {
         val source = expression
             .replace('×', '*')
             .replace('÷', '/')
+            .replace('−', '-')
             .replace(" ", "")
 
         require(source.isNotEmpty()) { "Empty expression" }
@@ -37,11 +38,13 @@ class CalculatorEngine {
                             hasDigit = true
                             index++
                         }
+
                         current == '.' -> {
                             dots++
                             require(dots <= 1) { "Invalid number" }
                             index++
                         }
+
                         else -> break
                     }
                 }
@@ -96,6 +99,7 @@ class CalculatorEngine {
                 require(right.compareTo(BigDecimal.ZERO) != 0) { "Division by zero" }
                 left.divide(right, mathContext)
             }
+
             else -> error("Unsupported operator")
         }
 
@@ -104,7 +108,6 @@ class CalculatorEngine {
 
     private fun format(value: BigDecimal): String {
         if (value.compareTo(BigDecimal.ZERO) == 0) return "0"
-        val normalized = value.stripTrailingZeros()
-        return normalized.toPlainString()
+        return value.stripTrailingZeros().toPlainString()
     }
 }
