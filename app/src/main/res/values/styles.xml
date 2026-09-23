@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.MaterialCalculator" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:navigationBarColor">?attr/colorSurface</item>
+        <item name="android:statusBarColor">?attr/colorSurface</item>
+        <item name="android:windowActionModeOverlay">true</item>
+    </style>
+
+    <style name="CalculatorKey.Base" parent="Widget.Material3.Button">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_margin">6dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="cornerRadius">24dp</item>
+        <item name="rippleColor">?attr/colorPrimaryContainer</item>
+    </style>
+
+    <style name="CalculatorKey.Number" parent="CalculatorKey.Base">
+        <item name="backgroundTint">?attr/colorSurfaceContainerHigh</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+
+    <style name="CalculatorKey.Action" parent="CalculatorKey.Base">
+        <item name="backgroundTint">?attr/colorSecondaryContainer</item>
+        <item name="android:textColor">?attr/colorOnSecondaryContainer</item>
+    </style>
+
+    <style name="CalculatorKey.Operator" parent="CalculatorKey.Base">
+        <item name="backgroundTint">?attr/colorPrimaryContainer</item>
+        <item name="android:textColor">?attr/colorOnPrimaryContainer</item>
+    </style>
+
+    <style name="CalculatorKey.Equals" parent="CalculatorKey.Base">
+        <item name="backgroundTint">?attr/colorPrimary</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+    </style>
+
+</resources>
